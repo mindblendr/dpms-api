@@ -16,7 +16,7 @@ class Json_model extends MY_Model {
 		$this->output
 				->set_status_header($header)
 				->set_content_type('application/json')
-				->set_output(json_encode($response, JSON_UNESCAPED_UNICODE)) // | JSON_NUMERIC_CHECK
+				->set_output(json_encode($response, JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT)) // | JSON_NUMERIC_CHECK
 				->_display();
 		exit;
     }
@@ -28,7 +28,7 @@ class Json_model extends MY_Model {
 		$this->output
 				->set_status_header($header)
 				->set_content_type('application/json')
-				->set_output(json_encode($response, JSON_UNESCAPED_UNICODE)) // | JSON_NUMERIC_CHECK
+				->set_output(json_encode($response, JSON_UNESCAPED_UNICODE | JSON_NUMERIC_CHECK | JSON_PRETTY_PRINT)) // | JSON_NUMERIC_CHECK
 				->_display();
 		exit;
 	}

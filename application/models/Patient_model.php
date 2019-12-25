@@ -75,12 +75,13 @@ class Patient_model extends MY_Model
 		}
 
 		db_timestamp('created', $data, $this->session_user->id, $this->session_user->type);
+		db_timestamp('updated', $data, $this->session_user->id, $this->session_user->type);
 		return $this->create($data);
 	}
 
 	public function edit()
 	{
-		$patient = $this->where(['patient.id' => $this->input->post('patient_id')])->get();
+		$patient = $this->get($this->input->post('patient_id'));
 		$data = [];
 
 		if ($this->input->post('firstname')) $data['firstname'] = $this->input->post('firstname');

@@ -116,7 +116,8 @@ function checkAuthPath()
 											->from($decoded_token->auth_guard)
 											->where([
 												$decoded_token->auth_guard . '.id' => $decoded_token->auth_id,
-												$decoded_token->auth_guard . '.session_id' => $decoded_token->auth_session_id
+												$decoded_token->auth_guard . '.session_id' => $decoded_token->auth_session_id,
+												$decoded_token->auth_guard . '.status' => 1
 											])
 											->get()
 											->row();	
